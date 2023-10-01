@@ -5,6 +5,9 @@ const btnInput = document.querySelector(".js-search-btn");
 const ulFilms = document.querySelector(".js-films");
 const ulFav = document.querySelector(".js-ul-favorites");
 
+const btnDelete = document.querySelector('.js-delete-btn');
+const xDelete = document.querySelector('.js-delete');
+
 let dataApi = [];
 
 let filmsList = [];
@@ -53,9 +56,9 @@ function PaintHtmlFav(filmsFav) {
   
       if (films.image === null) {
         //tambien vale si poner !== null dando la vuelta a la logica.
-        ulFav.innerHTML += `<li id=${films.id} class="list-films-fav js-list-films-fav"><h2 class="h2-fav">${films.name}</h2><img src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" alt""></li>`;
+        ulFav.innerHTML += `<span class="js-delete">&#10008;</span><li id=${films.id} class="list-films-fav js-list-films-fav"><h2 class="h2-fav">${films.name}</h2><img src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" alt""></li>`;
       } else {
-        ulFav.innerHTML += `<li id=${films.id} class="list-films-fav js-list-films-fav"><h2 class="h2-fav">${films.name}</h2><img src=${films.image.medium} alt""></li>`;
+        ulFav.innerHTML += `<span class="js-delete">&#10008;</span><li id=${films.id} class="list-films-fav js-list-films-fav"><h2 class="h2-fav">${films.name}</h2><img src=${films.image.medium} alt""></li>`;
       }
     }
   }
@@ -105,8 +108,13 @@ function checkFav(searchResults) {
     }*/
 }
 
+function handleDelete(event) {
+    event.preventDefault();
+}
+
 
 
 
 btnInput.addEventListener("click", handleSearch);
+btnDelete.addEventListener("click", handleDelete);
 
