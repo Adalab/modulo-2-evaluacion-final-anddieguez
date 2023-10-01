@@ -1,0 +1,69 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+    flex-direction: row-reverse;
+}
+
+.title-search{
+    color:#D34E24;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-search {
+    background-color: #D34E24;;
+    color: white;
+    width: 150px;
+    height: 30px;
+    border-radius: 5%;
+    margin-bottom: 50px;
+    font-family: 'Merriweather', serif;
+}
+
+.input-search{
+    width: 150px;
+    height: 30px;
+}
+
+.title-fav {
+    color:#D34E24;
+    padding: 20px;
+    margin-bottom: 80px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.js-list-films{
+    background-color: #563F1B;
+    width: 500px;
+    list-style-type: none;
+    text-align: center;
+    color: white;
+    font-family: 'Merriweather', serif;
+}
+
+.js-list-films-fav{
+    background-color: #38726C;
+    list-style-type: none;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    font-family: 'Merriweather', serif;
+}
+
+
+/*CUANDO LA QUIETE DE FAVORITOS*/
+.js-list-films-no-fav{
+    background-color: white;
+    list-style-type: none;
+    padding: 40px;
+    text-align: center;
+    color: black;
+}

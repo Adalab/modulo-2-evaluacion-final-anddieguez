@@ -41,6 +41,7 @@ function PaintHtml(data) {
     filmsList.push(films.show);
   }
   console.log(filmsList);
+  checkFav(filmsList);
 }
 
 function PaintHtmlFav(filmsFav) {
@@ -59,6 +60,7 @@ function PaintHtmlFav(filmsFav) {
     }
   }
   
+
 
 
 
@@ -89,6 +91,17 @@ function addToFav() {
     eachFilm.addEventListener("click", handleClickFav);
     //console.log(eachFilm);
   }
+}
+
+function checkFav(searchResults) {
+    console.log(filmsFav);
+    console.log(searchResults);
+    let foundFav = filmsFav.find((elem) => elem.id === searchResults.id);
+    console.log(foundFav);
+    /*const positionFav = filmsFav.findIndex((elem) => elem.id === idFilmClicked);
+    for (const item of data) {
+       let foundFilm = filmsList.find((elem) => elem.id === idFilmClicked);
+    }*/
 }
 
 
