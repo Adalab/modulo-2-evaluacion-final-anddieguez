@@ -31,10 +31,10 @@ function PaintHtml(data) {
 
     if (films.show.image === null) {
       //tambien vale si poner !== null dando la vuelta a la logica.
-      ulFilms.innerHTML += `<li id=${films.show.id} class="list-films js-list-films"><h2>${films.show.name}</h2><img src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" alt""></li>`;
+      ulFilms.innerHTML += `<li id=${films.show.id} class="list-films js-list-films"><h2 class="h2-list">${films.show.name}</h2><img src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" alt""></li>`;
       //console.log("no hay foto");
     } else {
-      ulFilms.innerHTML += `<li id=${films.show.id} class="list-films js-list-films"><h2>${films.show.name}</h2><img src=${films.show.image.medium} alt""></li>`;
+      ulFilms.innerHTML += `<li id=${films.show.id} class="list-films js-list-films"><h2 class="h2-list">${films.show.name}</h2><img src=${films.show.image.medium} alt""></li>`;
 
      // console.log("hay foto");
     }
@@ -53,13 +53,14 @@ function PaintHtmlFav(filmsFav) {
   
       if (films.image === null) {
         //tambien vale si poner !== null dando la vuelta a la logica.
-        ulFav.innerHTML += `<li id=${films.id} class="list-films-fav js-list-films-fav"><h2>${films.name}</h2><img src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" alt""></li>`;
+        ulFav.innerHTML += `<li id=${films.id} class="list-films-fav js-list-films-fav"><h2 class="h2-fav">${films.name}</h2><img src="https://via.placeholder.com/210x295/ffffff/666666/?text=TV" alt""></li>`;
       } else {
-        ulFav.innerHTML += `<li id=${films.id} class="list-films-fav js-list-films-fav"><h2>${films.name}</h2><img src=${films.image.medium} alt""></li>`;
+        ulFav.innerHTML += `<li id=${films.id} class="list-films-fav js-list-films-fav"><h2 class="h2-fav">${films.name}</h2><img src=${films.image.medium} alt""></li>`;
       }
     }
   }
   
+  //<span class="js-delete">&#11198;</span> SE QUITA EL ESTILO DE CSS DE LIST.
 
 
 
@@ -105,4 +106,7 @@ function checkFav(searchResults) {
 }
 
 
+
+
 btnInput.addEventListener("click", handleSearch);
+
