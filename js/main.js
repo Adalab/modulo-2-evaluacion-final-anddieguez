@@ -32,7 +32,7 @@ function handleSearch(event) {
     .then((dataApi) => {
       //console.log(dataApi);
       PaintHtml(dataApi); //con esto le llega a la funcion paintHtml el paquete (dataApi)
-      addToFav();
+      addFav();
     });
 }
 
@@ -73,7 +73,7 @@ function PaintHtmlFav(filmsFav) {
     }
   }
   
-  //<span class="js-delete">&#11198;</span> SE QUITA EL ESTILO DE CSS DE LIST.
+ 
 
 
 
@@ -97,20 +97,11 @@ function handleClickFav(event) {
   //console.log(filmsFav);
   PaintHtmlFav(filmsFav);//una vez que tenemos la caja de favoritos, llamamos a la funcion pintarHtmlFav, para que nos pinte la caja de favoritos.
 
-
-
-
-
   localStorage.setItem("localFav", JSON.stringify(filmsFav));
-
-
-
-
-
 
 }
 
-function addToFav() {
+function addFav() {
   //me tengo que traer las peliculas favoritas cuando ya esten cargado el listado de peliculas.
   //utlizamos ul que se definio al principio. Al principio estaba vacio y ahora contiene el listado de películas que se ha buscado.
   //console.log(ulFilms);
@@ -122,21 +113,11 @@ function addToFav() {
   }
 }
 
-/*function checkFav(searchResults) {
-    //console.log(filmsFav);
-    //console.log(searchResults);
-    let foundFav = filmsFav.find((elem) => elem.id === searchResults.id);
-    //console.log(foundFav);
-    const positionFav = filmsFav.findIndex((elem) => elem.id === idFilmClicked);
-    for (const item of data) {
-       let foundFilm = filmsList.find((elem) => elem.id === idFilmClicked);
-    }
-}*/
-
 function handleDelete(event) {//para borrar primero vacio el let de las peliculas favoritas y vuelvo a llamar a la funcion paintHtmlFav. para que lo vuelva a pintar vacio.
     event.preventDefault();
     let filmsFav = [];
     PaintHtmlFav(filmsFav);
+    localStorage.setItem("localFav", JSON.stringify(filmsFav));
 }
 
 
