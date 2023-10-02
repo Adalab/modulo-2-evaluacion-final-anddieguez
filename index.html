@@ -5,26 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Examen Final Módulo 2</title>
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Buscador de series</h1>
-    <main>
-      <input
-        type="text"
-        class="js-search-text"
-        placeholder="Escribe aquí tu serie"
-      />
-      <button class="js-search-btn">Search</button>
-      <div>
-        <section class="js-container">
-          <ul class="js-films"></ul>
-        </section>
+    <main class="main">
+      <section class="search-film">
+        <h1 class="title-search">Buscador de series</h1>
+        <input
+          type="text"
+          class="js-search-text input-search"
+          placeholder="Escribe aquí tu serie"
+        />
+        <button class="btn-search js-search-btn">Search</button>
+        <ul class="js-films films"></ul>
+      </section>
 
-        <section class="js-favorites">
-          <h2>Mis series favoritas</h2>
-          <ul class="js-ul-favorites"></ul>
-        </section>
-      </div>
+      <section class="fav-film">
+        <h2 class="title-fav">Mis series favoritas</h2>
+        <ul class="js-ul-favorites"></ul>
+        <button class="btn-delete js-delete-btn">Delete</button>
+      </section>
     </main>
 
     <script src="./js/main.js"></script>
